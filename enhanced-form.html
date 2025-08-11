@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Persona | Forms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background-image: url("rich-coffee.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      main {
+        background: rgba(255, 255, 255, 0.92);
+        max-width: 700px;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #888;
+      }
+      h1,
+      h2 {
+        color: #3e2723;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 1.5rem;
+      }
+      th,
+      td {
+        border: 1px solid #795548;
+        padding: 0.5rem;
+        text-align: left;
+      }
+      th {
+        background: #d7ccc8;
+      }
+      label {
+        font-weight: bold;
+      }
+      input,
+      select,
+      textarea,
+      button {
+        width: 100%;
+        padding: 0.5rem;
+        margin-top: 0.2rem;
+        margin-bottom: 1rem;
+        border: 1px solid #bdbdbd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      button {
+        background: #ae4320;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+      button:hover {
+        background: #3e2723;
+      }
+      footer {
+        text-align: center;
+        color: #fff;
+        background: #3e2723;
+        padding: 1rem 0;
+        margin-top: 2rem;
+      }
+      .readonly-field {
+        background: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Profiling</h1>
+    </header>
+    <main>
+      <section>
+        <!-- <img src="rich-coffee.jpg" alt="rich coffee" /> -->
+        <h2>Aspiring software development skills</h2>
+        <p title="Aspiring software developer">
+          I am an aspiring software developer with a passion for creating
+          innovative solutions. I am currently learning various programming
+          languages and frameworks to enhance my skills.
+        </p>
+        <audio controls>
+          <source src="audio.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </section>
+
+      <section>
+        <h2>Programming Languages</h2>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">Javascript</a></li>
+          <li><a href="#">Python</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Skills</h2>
+        <ol>
+          <li><a href="#">Strutured coding</a></li>
+          <li><a href="#">Problem-solving</a></li>
+          <li><a href="#">Team collaboration</a></li>
+          <li><a href="#">Version control</a></li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Proficiency Table</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Programming Language</th>
+              <th>Proficiency Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>HTML</td>
+              <td>Intermediate</td>
+            </tr>
+            <tr>
+              <td>CSS</td>
+              <td>Beginner</td>
+            </tr>
+            <tr>
+              <td>JavaScript</td>
+              <td>Beginner</td>
+            </tr>
+            <tr>
+              <td>Python</td>
+              <td>Beginner</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Contact Information</h2>
+        <form autocomplete="on">
+          <fieldset>
+            <legend>Personal Details</legend>
+            <label for="name">Full Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              minlength="2"
+              maxlength="40"
+              pattern="[A-Za-z\s\-']+"
+              placeholder="e.g. Joshua Dabby"
+              title="Name should only contain letters, spaces, hyphens, or apostrophes."
+              autocomplete="name"
+            />
+
+            <label for="email">Email Address:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              maxlength="100"
+              placeholder="e.g. joshua@example.com"
+              autocomplete="email"
+            />
+
+            <label for="phone">Phone Number:</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              pattern="^\+?\d{10,15}$"
+              minlength="10"
+              maxlength="15"
+              placeholder="e.g. +2348012345678"
+              title="Enter a valid phone number (10-15 digits, may start with +)."
+              autocomplete="tel"
+            />
+
+            <label for="DOB">Date of Birth:</label>
+            <input
+              type="date"
+              id="DOB"
+              name="DOB"
+              required
+              min="1950-01-01"
+              max="2025-12-31"
+              autocomplete="bday"
+            />
+
+            <label for="country">Country:</label>
+            <input
+              type="text"
+              id="country"
+              name="country"
+              required
+              placeholder="e.g. Nigeria"
+              autocomplete="country"
+              list="country-list"
+            />
+            <datalist id="country-list">
+              <option value="Nigeria"></option>
+              <option value="Ghana"></option>
+              <option value="Kenya"></option>
+              <option value="South Africa"></option>
+              <option value="United States"></option>
+              <option value="United Kingdom"></option>
+            </datalist>
+          </fieldset>
+
+          <fieldset>
+            <legend>Message</legend>
+            <label for="message">Your Message:</label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              minlength="10"
+              maxlength="600"
+              placeholder="Type your message here (at least 10 characters)..."
+              title="Message should be at least 10 characters."
+              autocomplete="off"
+            ></textarea>
+          </fieldset>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025. joshuaolusheye-Dev. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
